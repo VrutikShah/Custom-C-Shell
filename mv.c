@@ -35,9 +35,9 @@ void moveFile(int argc , char **argv)
   strcpy(src, argv[1]);
   strcpy(dest, argv[2]);
   // strcpy(dest, token);
-  printf("\n1"); 
+//   printf("\n1"); 
   // src = token;
-  printf("\n2"); 
+//   printf("\n2"); 
   stat(src, &statbuf_src);
   stat(dest, &statbuf_dest);
 
