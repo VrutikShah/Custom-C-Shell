@@ -1,14 +1,14 @@
-all: build
+SRCS = shell.c makedir.c grepp.c mv.c cd.c cp.c remove.c cat.c call.c
+TARG = shell
+CC = gcc
+OPTS = -Wall -O
+LIBS = -lm -lreadline
 
-build: binaries
-  @echo "Building"
-  gcc shell.c -o shell
-
-binaries:
-  @echo "Building ls..."
-  gcc ls.c -o ls
-
+OBJS = $(SRCS:.c=.o)
+all: $(TARG)
+$(TARG): $(OBJS)
+	$(CC) -o $(TARG) $(OBJS) $(LIBS)
+%.o: %.c
+	$(CC) $(OPTS) -c $< -o $@
 clean:
-  @echo "Cleaning"
-  rm ls
-  rm shell
+	rm -f $(OBJS) $(TARG)
