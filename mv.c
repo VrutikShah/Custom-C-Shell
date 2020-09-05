@@ -47,7 +47,7 @@ void moveFile(int argc , char **argv)
   
   
   current_directory = getenv("PWD");
-  printf("current directory is \"%s\"\n", current_directory);
+//   printf("current directory is \"%s\"\n", current_directory);
 
   
   new_src = malloc(strlen(src) + 1 + strlen(current_directory) + 1);
